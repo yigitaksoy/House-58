@@ -1,10 +1,18 @@
+import { AnimatePresence } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
+import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
+import Navbar from "./components/Navbar/Navbar";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-cool-white text-center">
-        House 58 Digital Solutions{" "}
-      </h1>
-    </div>
+    <BrowserRouter>
+      <AnimatePresence>
+        <Navbar />
+      </AnimatePresence>
+      <AnimatePresence>
+        <AnimatedRoutes />
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 
