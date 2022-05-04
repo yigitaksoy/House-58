@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ServicesIntro from "../sections/ServicesIntro";
 import Hero from "../sections/Hero";
 import TechStack from "../sections/TechStack";
+import Services from "../sections/Services";
 
 const Landing = () => {
   const data = {
@@ -47,6 +48,7 @@ const Landing = () => {
       />
       <ServicesIntro />
       <TechStack />
+      <Services />
     </motion.div>
   );
 };
