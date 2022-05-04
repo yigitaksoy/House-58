@@ -10,7 +10,6 @@ const ServicesIntro = () => {
   const animation = useAnimation();
 
   useEffect(() => {
-    console.log("useEffect, inView =>", inView);
     if (inView) {
       animation.start({
         x: 0,
