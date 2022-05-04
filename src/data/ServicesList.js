@@ -1,6 +1,6 @@
 import Ecommerce from "../assets/svgs/ecommerce.svg";
 import Maintanence from "../assets/svgs/maintanence.svg";
-import Undraw from "../assets/svgs/web-design.svg";
+import WebDesign from "../assets/svgs/web-design.svg";
 import FullStack from "../assets/svgs/full-stack.svg";
 
 export const servicesList = [
@@ -23,7 +23,7 @@ export const servicesList = [
     title: "Web Design",
     description:
       "Your website is one of the first things that your potential customers will see when they’re searching for a company like yours online. We provide a full range of custom web application development services starting from UI/UX design, to front-end and back-end development, maintenance and support.",
-    img: Undraw,
+    img: WebDesign,
   },
   {
     id: 4,
