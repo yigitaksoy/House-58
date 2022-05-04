@@ -3,6 +3,7 @@ import ServicesIntro from "../sections/ServicesIntro";
 import Hero from "../sections/Hero";
 import TechStack from "../sections/TechStack";
 import Services from "../sections/Services";
+import Footer from "../sections/Footer";
 
 const Landing = () => {
   const data = {
@@ -49,6 +50,7 @@ const Landing = () => {
       <ServicesIntro />
       <TechStack />
       <Services />
+      <Footer />
     </motion.div>
   );
 };
