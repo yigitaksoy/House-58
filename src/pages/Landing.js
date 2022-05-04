@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ServicesIntro from "../sections/ServicesIntro";
 import Hero from "../sections/Hero";
+import TechStack from "../sections/TechStack";
 
 const Landing = () => {
   const data = {
@@ -45,6 +46,7 @@ const Landing = () => {
         locationText={data.Hero.locationText}
       />
       <ServicesIntro />
+      <TechStack />
     </motion.div>
   );
 };
