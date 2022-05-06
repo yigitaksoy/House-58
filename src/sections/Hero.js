@@ -34,8 +34,8 @@ const Hero = ({ marqueeText, locationText }) => {
       <motion.div
         className="w-screen marquee-bg"
         transition={{ duration: 1, delay: 1 }}
-        initial={{ opacity: 0, y: "-10vh" }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
       >
         <Marquee
           speed="150"
