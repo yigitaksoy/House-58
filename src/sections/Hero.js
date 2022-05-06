@@ -38,7 +38,7 @@ const Hero = ({ marqueeText, locationText }) => {
         animate={{ opacity: 1 }}
       >
         <Marquee
-          speed="200"
+          speed="100"
           gradient={false}
           direction="left"
           pauseOnHover={false}
