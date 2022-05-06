@@ -9,8 +9,8 @@ const Services = () => {
     >
       <motion.div className="lg:w-2/3 md:3/4 mx-auto ">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.5 }}
           className=" font-black lg:text-7xl text-5xl text-center pt-20 text-cool-white mb-20"
         >
@@ -23,8 +23,8 @@ const Services = () => {
             <motion.div
               key={services.id}
               className="flex flex-wrap pt-10 pb-10 items-center glow md:flex-row-reverse mb-20 lg:shadow-2xl rounded-3xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.7 }}
             >
               <motion.div className="w-full md:w-1/2 lg:w-5/12 mr-auto md:mr-auto">
@@ -59,8 +59,8 @@ const Services = () => {
             <motion.div
               key={services.id}
               className="flex flex-wrap pt-10 pb-10 items-center md:flex-row-reverse mb-20 "
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.5 }}
             >
               <motion.div className="w-full md:w-1/2 lg:w-5/12 ml-auto md:ml-auto md:order-last">
