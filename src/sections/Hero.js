@@ -38,10 +38,11 @@ const Hero = ({ marqueeText, locationText }) => {
         animate={{ opacity: 1 }}
       >
         <Marquee
-          speed="100"
+          speed="170"
           gradient={false}
           direction="left"
           pauseOnHover={false}
+          delay="2"
         >
           <h1 className="font-black lg:text-[8rem] md:text-[6rem] text-7xl overflow-hidden lg:pt-1 lg:py-5 pt-5 py-5 text-center">
             {marqueeText}
