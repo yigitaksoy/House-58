@@ -97,7 +97,7 @@ const ContactForm = () => {
             <div className=" text-center">
               <button
                 type="submit"
-                className="uppercase text-lg font-bold tracking-wide p-3 rounded-xl transition duration-300 text-cool-beige border hover:border-0"
+                className="uppercase text-lg font-bold tracking-wide w-2/5 p-3 rounded-xl transition duration-300 text-cool-beige border hover:border-0"
               >
                 Let’s Talk!
               </button>
