@@ -155,9 +155,58 @@
 
 /*   Contact */
 
-#contact h1 {
+.contact-marquee {
   background: linear-gradient(145deg, #00bbff, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Contact Form */
+
+#form-container h3 {
+  background: linear-gradient(145deg, #72f, #c1b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#contact .label {
+  color: #444;
+}
+
+#contact textarea {
+  color: var(--stroke-beige-fill);
+}
+
+#contact button:hover {
+  background: linear-gradient(
+    300deg,
+    rgba(82, 93, 255, 0.914),
+    rgba(252, 255, 119, 0.82),
+    rgba(153, 255, 151, 0.624),
+    rgba(97, 170, 255, 0.72),
+    rgba(35, 128, 180, 0.867),
+    rgba(82, 93, 255, 0.914),
+    rgb(207, 66, 202),
+    rgb(255, 89, 89),
+    rgb(255, 89, 89),
+    rgb(251, 146, 60),
+    rgb(217, 70, 239),
+    hsl(217, 91%, 60%),
+    rgb(228, 77, 77)
+  );
+  background-size: 240% 240%;
+  animation: gradient-animation 20s ease infinite;
+}
+
+.email {
+  background: linear-gradient(to right, rgb(251, 113, 133), rgb(251, 146, 60));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ::placeholder {
+  color: #fff !important;
+} */

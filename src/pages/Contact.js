@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 const animations = {
   hidden: {
@@ -39,12 +40,7 @@ const Contact = () => {
             </h1>
           </div>
           <div className="lg:p-10 pt-10 md:p-10 md:pt-20">
-            <p
-              className=" email 
-             text-2xl"
-            >
-              Dont like forms? Send us an email!
-            </p>
+            <p className="email text-3xl">Dont like forms? Send us an email!</p>
             <a
               href="mailto:hello@house58.nl"
               alt="mail"
@@ -66,6 +62,14 @@ const Contact = () => {
               </a>
             </h3>
           </div>
+        </motion.div>
+        <motion.div
+          transition={{ duration: 1, delay: 0.7 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full overflow-hidden lg:w-1/2 xl:w-1/2 p-4"
+        >
+          <ContactForm />
         </motion.div>
       </div>
       <div className="text-center relative mt-32 lg:hidden">
