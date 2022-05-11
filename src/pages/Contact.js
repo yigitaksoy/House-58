@@ -16,6 +16,21 @@ const animations = {
   },
 };
 
+const item = {
+  hidden: {
+    y: "200%",
+    transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 1 },
+  },
+  visible: {
+    y: 0,
+    transition: {
+      ease: [0.455, 0.03, 0.515, 0.955],
+      duration: 1,
+      delay: 0.6,
+    },
+  },
+};
+
 const Contact = () => {
   return (
     <motion.div
@@ -28,49 +43,58 @@ const Contact = () => {
     >
       <div className="flex flex-wrap overflow-hidden">
         <motion.div
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 1, delay: 0.2 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="w-full overflow-hidden lg:w-1/2 xl:w-1/2 lg:p-10 p-5 md:p-10"
+          className="w-full lg:w-1/2 xl:w-1/2 lg:p-10 p-5 md:p-10"
         >
-          <div className=" lg:p-10 md:p-10 pt-20 md:pt-2 lg:pt-20">
-            <h1 className="text-cool-white lg:text-4xl text-2xl">
+          <motion.div className=" lg:p-10 md:p-10 pt-20 md:pt-2 lg:pt-20 overflow-hidden">
+            <motion.h1 className="text-cool-white lg:text-4xl text-2xl">
               If you’re interested in working with us, or collaborating on a
               project, we’d love to hear from you!
-            </h1>
-          </div>
-          <div className="lg:p-10 pt-10 md:p-10 md:pt-20">
-            <p className="email text-3xl">Dont like forms? Send us an email!</p>
-            <a
-              href="mailto:hello@house58.nl"
-              alt="mail"
-              className="text-xl font-black text-cool-beige transition duration-300 hover:text-cool-blue"
-            >
-              {" "}
-              hello@house58.nl
-            </a>
-            <h3 className="pt-10">
-              {" "}
-              <a
-                href="https://www.linkedin.com/company/house-58-digital/"
-                alt="linkedin"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-xl font-black text-cool-beige transition duration-300 hover:text-cool-blue "
+            </motion.h1>
+          </motion.div>
+
+          <motion.div className="lg:p-10 pt-10 md:p-10 md:pt-20">
+            <div className="overflow-hidden">
+              <motion.p
+                variants={item}
+                className=" email text-3xl overflow-hidden"
               >
-                Linkedin
-              </a>
-            </h3>
-          </div>
+                Dont like forms? Send us an email!
+              </motion.p>
+            </div>
+            <div className="overflow-hidden">
+              <motion.p variants={item}>
+                <a
+                  href="mailto:hello@house58.nl"
+                  alt="mail"
+                  className="text-xl font-black text-cool-beige transition duration-300 hover:text-cool-blue overflow-hidden"
+                >
+                  {" "}
+                  hello@house58.nl
+                </a>
+              </motion.p>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h3 variants={item} className="pt-10">
+                {" "}
+                <a
+                  href="https://www.linkedin.com/company/house-58-digital/"
+                  alt="linkedin"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-xl font-black text-cool-beige transition duration-300 hover:text-cool-blue overflow-hidden"
+                >
+                  Linkedin
+                </a>
+              </motion.h3>
+            </div>
+          </motion.div>
         </motion.div>
-        <motion.div
-          transition={{ duration: 1, delay: 0.7 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="w-full overflow-hidden lg:w-1/2 xl:w-1/2 p-4"
-        >
+        <div className="w-full overflow-hidden lg:w-1/2 xl:w-1/2 p-4">
           <ContactForm />
-        </motion.div>
+        </div>
       </div>
       <div className="text-center relative mt-32 lg:hidden">
         <p className="font-black absolute bottom-5 right-0 left-0 text-cool-white">
