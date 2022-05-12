@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm/ContactForm";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const animations = {
   hidden: {
@@ -32,6 +36,28 @@ const item = {
 };
 
 const Contact = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+  const handleSendEmail = () => {
+    ReactGA.event({
+      category: "Contact Page",
+      action: "send_email",
+      label: "Send Email Clicked!",
+      value: 1,
+    });
+  };
+
+  const handleLinkedIn = () => {
+    ReactGA.event({
+      category: "Contact Page",
+      action: "linkedin",
+      label: "Redirected to LinkedIn",
+      value: 1,
+    });
+  };
+
   return (
     <motion.div
       variants={animations}
@@ -65,7 +91,7 @@ const Contact = () => {
               </motion.p>
             </div>
             <div className="overflow-hidden">
-              <motion.p variants={item}>
+              <motion.p onClick={handleSendEmail} variants={item}>
                 <a
                   href="mailto:hello@house58.nl"
                   alt="mail"
@@ -77,7 +103,11 @@ const Contact = () => {
               </motion.p>
             </div>
             <div className="overflow-hidden">
-              <motion.h3 variants={item} className="pt-10">
+              <motion.h3
+                onClick={handleLinkedIn}
+                variants={item}
+                className="pt-10"
+              >
                 {" "}
                 <a
                   href="https://www.linkedin.com/company/house-58-digital/"
