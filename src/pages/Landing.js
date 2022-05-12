@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ServicesIntro from "../sections/ServicesIntro";
 import Hero from "../sections/Hero";
 import TechStack from "../sections/TechStack";
 import Services from "../sections/Services";
 import Footer from "../sections/Footer";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const Landing = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const data = {
     Hero: {
       actionText: "HOUSE OF",
