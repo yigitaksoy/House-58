@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const ServicesIntro = () => {
   const { ref, inView } = useInView({
@@ -24,7 +27,16 @@ const ServicesIntro = () => {
       animation.start({ x: "-100vw" });
     }
   }, [animation, inView]);
-  //grid lg:grid-cols-2 sm:grid-cols-1
+
+  const handleLetsTalk = () => {
+    ReactGA.event({
+      category: "Landing Page",
+      action: "servicesIntro_letsTalk",
+      label: "Services Intro Lets Talk button clicked",
+      value: 1,
+    });
+  };
+
   return (
     <motion.div
       id="services-intro"
@@ -49,6 +61,7 @@ const ServicesIntro = () => {
             <Link
               to="/contact"
               className="text-cool-blue3 text-2xl lg:text-3xl"
+              onClick={handleLetsTalk}
             >
               Lets Talk!
               <svg

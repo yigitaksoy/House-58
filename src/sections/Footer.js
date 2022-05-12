@@ -1,8 +1,38 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Buildings from "../assets/images/buildings.png";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const Footer = () => {
+  const handleLetsTalk = () => {
+    ReactGA.event({
+      category: "Landing Page",
+      action: "footer_letsTalk",
+      label: "Footer Lets Talk button clicked",
+      value: 1,
+    });
+  };
+
+  const handleSendEmail = () => {
+    ReactGA.event({
+      category: "Landing Page",
+      action: "footer_sendEmail",
+      label: "Footer email button clicked",
+      value: 1,
+    });
+  };
+
+  const handleLinkedIn = () => {
+    ReactGA.event({
+      category: "Landing Page",
+      action: "footer_LinkedIn",
+      label: "Footer LinkedIn button clicked",
+      value: 1,
+    });
+  };
+
   const float = {
     initial: {
       y: 0,
@@ -11,6 +41,7 @@ const Footer = () => {
       y: -10,
     },
   };
+
   return (
     <div id="footer" className="lg:h-screen h-screen md:h-[80vh]">
       <div className="container mx-auto grid grid-cols-1 lg:ml-28 p-10">
@@ -53,6 +84,7 @@ const Footer = () => {
             >
               <Link
                 to="/contact"
+                onClick={handleLetsTalk}
                 className="lg:text-4xl text-3xl mt-10 font-black text-cool-white"
               >
                 Lets Talk!
@@ -94,6 +126,7 @@ const Footer = () => {
                   href="mailto:hello@house58.nl"
                   alt="mail"
                   className="text-xl font-black hover:text-cool-beige transition duration-300"
+                  onClick={handleSendEmail}
                 >
                   {" "}
                   hello@house58.nl
@@ -109,6 +142,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                     className="text-xl font-black hover:text-cool-beige transition duration-300"
+                    onClick={handleLinkedIn}
                   >
                     Linkedin
                   </a>

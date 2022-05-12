@@ -2,8 +2,28 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useViewportScroll } from "framer-motion";
 import Logo from "../../assets/images/House-58-Only.png";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const Navbar = () => {
+  const handleHomeRoute = () => {
+    ReactGA.event({
+      category: "Navbar",
+      action: "navbar_home",
+      label: "Navigated to Home Page",
+      value: 1,
+    });
+  };
+
+  const handleContactRoute = () => {
+    ReactGA.event({
+      category: "Navbar",
+      action: "navbar_contact",
+      label: "Navigated to Contact Page",
+      value: 1,
+    });
+  };
   const lightText =
     "text-cool-white hover:text-cool-blue transition duration-300";
 
@@ -46,7 +66,7 @@ const Navbar = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 3 }}
       >
-        <Link to="/">
+        <Link to="/" onClick={handleHomeRoute}>
           <motion.img
             className="object-fit w-44 h-26 transition duration-300"
             src={Logo}
@@ -61,7 +81,7 @@ const Navbar = () => {
         transition={{ delay: 3 }}
         className="md:pr-10 pr-10"
       >
-        <Link to="/contact" className={lightText}>
+        <Link to="/contact" className={lightText} onClick={handleContactRoute}>
           Contact
         </Link>
       </motion.div>
