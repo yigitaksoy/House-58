@@ -1,12 +1,22 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-215804368-1");
 
 const ContactForm = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    ReactGA.event({
+      category: "Contact Page",
+      action: "form_submit",
+      label: "New Contact Form Project Request",
+      value: 1,
+    });
 
     emailjs
       .sendForm(
