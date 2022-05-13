@@ -1,13 +1,39 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { techLogos } from "../data/TechLogos";
+import ReactGA from "react-ga";
 
 const TechStack = () => {
+  const intersectTarget = useRef(null);
+
+  useEffect(() => {
+    const opts = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+    const callback = (list) => {
+      list.forEach((entry) => {
+        if (entry.isIntersecting) {
+          ReactGA.event({
+            category: "Scroll",
+            action: "Scrolled to TechStack",
+            value: 1,
+          });
+        }
+      });
+    };
+    const observerScroll = new IntersectionObserver(callback, opts);
+
+    observerScroll.observe(intersectTarget.current);
+  }, []);
   return (
     <motion.div
       id="tech-stack"
       className="h-[70vh] md:h-[60vh] mb-24 lg:mb-10 md:mb-1"
     >
       <motion.h2
+        ref={intersectTarget}
         className="text-center font-black lg:text-6xl sm: text-4xl text-cool-white mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

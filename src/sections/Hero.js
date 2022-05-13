@@ -1,9 +1,35 @@
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import AnimatedText from "../components/AnimatedText/AnimatedText";
 import Windmill from "../assets/svgs/windmill.svg";
+import ReactGA from "react-ga";
 
 const Hero = ({ marqueeText, locationText }) => {
+  const intersectTarget = useRef(null);
+
+  useEffect(() => {
+    const opts = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+    const callback = (list) => {
+      list.forEach((entry) => {
+        if (entry.isIntersecting) {
+          ReactGA.event({
+            category: "Scroll",
+            action: "Scrolled to Hero Section",
+            value: 1,
+          });
+        }
+      });
+    };
+    const observerScroll = new IntersectionObserver(callback, opts);
+
+    observerScroll.observe(intersectTarget.current);
+  }, []);
+
   const placeholderText = [{ type: "heading2", text: "HOUSE OF" }];
 
   const container = {
@@ -22,7 +48,7 @@ const Hero = ({ marqueeText, locationText }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <motion.div>
+      <motion.div ref={intersectTarget}>
         <motion.div initial="hidden" animate={"visible"} variants={container}>
           <motion.div className="split-container">
             {placeholderText.map((item, index) => {

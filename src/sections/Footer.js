@@ -1,11 +1,33 @@
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Buildings from "../assets/images/buildings.png";
 import ReactGA from "react-ga";
 
-ReactGA.initialize("UA-215804368-1");
-
 const Footer = () => {
+  const intersectTarget = useRef(null);
+
+  useEffect(() => {
+    const opts = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+    const callback = (list) => {
+      list.forEach((entry) => {
+        if (entry.isIntersecting) {
+          ReactGA.event({
+            category: "Scroll",
+            action: "Scrolled to Footer",
+            value: 1,
+          });
+        }
+      });
+    };
+    const observerScroll = new IntersectionObserver(callback, opts);
+
+    observerScroll.observe(intersectTarget.current);
+  }, []);
   const handleLetsTalk = () => {
     ReactGA.event({
       category: "Landing Page",
@@ -47,6 +69,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 lg:ml-28 p-10">
         <motion.div>
           <motion.h2
+            ref={intersectTarget}
             className="lg:text-6xl md:grid md:grid-cols-2 md:text-5xl font-black text-4xl lg:pt-16 pt-20"
             initial={{ opacity: 0 }}
             whileInView={{

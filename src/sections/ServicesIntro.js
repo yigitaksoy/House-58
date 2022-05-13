@@ -1,12 +1,35 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import ReactGA from "react-ga";
 
-ReactGA.initialize("UA-215804368-1");
-
 const ServicesIntro = () => {
+  const intersectTarget = useRef(null);
+
+  useEffect(() => {
+    const opts = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+    const callback = (list) => {
+      list.forEach((entry) => {
+        if (entry.isIntersecting) {
+          ReactGA.event({
+            category: "Scroll",
+            action: "Scrolled to Services Intro",
+            value: 1,
+          });
+        }
+      });
+    };
+    const observerScroll = new IntersectionObserver(callback, opts);
+
+    observerScroll.observe(intersectTarget.current);
+  }, []);
+
   const { ref, inView } = useInView({
     threshold: 0.1, // Can be set between 0 to 2
   });
@@ -45,6 +68,7 @@ const ServicesIntro = () => {
       <div ref={ref}>
         <motion.div className="p-6 lg:ml-48 md:ml-20 " animate={animation}>
           <motion.h2
+            ref={intersectTarget}
             whileHover={{ scale: 1.4, x: 80 }}
             className="  font-black lg:text-8xl text-5xl md:text-6xl pb-10"
             animate={animation}
