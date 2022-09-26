@@ -3,32 +3,9 @@ import { useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import ReactGA from "react-ga";
 
 const ServicesIntro = () => {
   const intersectTarget = useRef(null);
-
-  useEffect(() => {
-    const opts = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0,
-    };
-    const callback = (list) => {
-      list.forEach((entry) => {
-        if (entry.isIntersecting) {
-          ReactGA.event({
-            category: "Scroll",
-            action: "Scrolled to Services Intro",
-            value: 1,
-          });
-        }
-      });
-    };
-    const observerScroll = new IntersectionObserver(callback, opts);
-
-    observerScroll.observe(intersectTarget.current);
-  }, []);
 
   const { ref, inView } = useInView({
     threshold: 0.1, // Can be set between 0 to 2
@@ -50,15 +27,6 @@ const ServicesIntro = () => {
       animation.start({ x: "-100vw" });
     }
   }, [animation, inView]);
-
-  const handleLetsTalk = () => {
-    ReactGA.event({
-      category: "Landing Page",
-      action: "servicesIntro_letsTalk",
-      label: "Services Intro Lets Talk button clicked",
-      value: 1,
-    });
-  };
 
   return (
     <motion.div
@@ -85,7 +53,6 @@ const ServicesIntro = () => {
             <Link
               to="/contact"
               className="text-cool-blue3 text-2xl lg:text-3xl"
-              onClick={handleLetsTalk}
             >
               Lets Talk!
               <svg

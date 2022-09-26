@@ -1,32 +1,9 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { servicesList } from "../data/ServicesList";
-import ReactGA from "react-ga";
 
 const Services = () => {
   const intersectTarget = useRef(null);
-
-  useEffect(() => {
-    const opts = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0,
-    };
-    const callback = (list) => {
-      list.forEach((entry) => {
-        if (entry.isIntersecting) {
-          ReactGA.event({
-            category: "Scroll",
-            action: "Scrolled to Services",
-            value: 1,
-          });
-        }
-      });
-    };
-    const observerScroll = new IntersectionObserver(callback, opts);
-
-    observerScroll.observe(intersectTarget.current);
-  }, []);
 
   return (
     <motion.div

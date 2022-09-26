@@ -28,32 +28,6 @@ const Footer = () => {
 
     observerScroll.observe(intersectTarget.current);
   }, []);
-  const handleLetsTalk = () => {
-    ReactGA.event({
-      category: "Landing Page",
-      action: "footer_letsTalk",
-      label: "Footer Lets Talk button clicked",
-      value: 1,
-    });
-  };
-
-  const handleSendEmail = () => {
-    ReactGA.event({
-      category: "Landing Page",
-      action: "footer_sendEmail",
-      label: "Footer email button clicked",
-      value: 1,
-    });
-  };
-
-  const handleLinkedIn = () => {
-    ReactGA.event({
-      category: "Landing Page",
-      action: "footer_LinkedIn",
-      label: "Footer LinkedIn button clicked",
-      value: 1,
-    });
-  };
 
   const float = {
     initial: {
@@ -107,7 +81,6 @@ const Footer = () => {
             >
               <Link
                 to="/contact"
-                onClick={handleLetsTalk}
                 className="lg:text-4xl text-3xl mt-10 font-black text-cool-white"
               >
                 Lets Talk!
@@ -149,7 +122,6 @@ const Footer = () => {
                   href="mailto:hello@house58.nl"
                   alt="mail"
                   className="text-xl font-black hover:text-cool-beige transition duration-300"
-                  onClick={handleSendEmail}
                 >
                   {" "}
                   hello@house58.nl
@@ -165,7 +137,6 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                     className="text-xl font-black hover:text-cool-beige transition duration-300"
-                    onClick={handleLinkedIn}
                   >
                     Linkedin
                   </a>
