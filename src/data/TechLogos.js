@@ -23,13 +23,13 @@ export const techLogos = [
   {
     id: 4,
     img: AwsLogo,
-    alt: "Aws",
+    alt: "Amazon web services",
     width: 100,
   },
   {
     id: 5,
     img: GCP,
-    alt: "GoogleAnalytics",
+    alt: "Google Cloud Platform",
     width: 100,
   },
   {
@@ -47,13 +47,13 @@ export const techLogos = [
   {
     id: 8,
     img: GoogleAnalytics,
-    alt: "GoogleAnalytics",
+    alt: "Google Analytics",
     width: 100,
   },
   {
     id: 9,
     img: GTM,
-    alt: "GoogleAnalytics",
+    alt: "Google Tag Manager",
     width: 100,
   },
 ];
