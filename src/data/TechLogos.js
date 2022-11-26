@@ -1,8 +1,11 @@
-import ReactLogo from "../assets/logos/ReactLogo.svg";
+import ReactLogo from "../assets/logos/reactjs.svg";
 import DjangoLogo from "../assets/logos/Django-logo.png";
-import AwsLogo from "../assets/logos/aws.svg";
-import WordpressLogo from "../assets/logos/WordPress.png";
-import ShopifyLogo from "../assets/logos/shopify.png";
+import AwsLogo from "../assets/logos/amazon_aws.svg";
+import WordpressLogo from "../assets/logos/wordpress.svg";
+import ShopifyLogo from "../assets/logos/shopify-white.svg";
+import GoogleAnalytics from "../assets/logos/google_analytics.svg";
+import GTM from "../assets/logos/gtm.svg";
+import GCP from "../assets/logos/gcp.svg";
 
 export const techLogos = [
   {
@@ -25,14 +28,32 @@ export const techLogos = [
   },
   {
     id: 5,
+    img: GCP,
+    alt: "GoogleAnalytics",
+    width: 100,
+  },
+  {
+    id: 6,
     img: WordpressLogo,
     alt: "Wordpress",
     width: 150,
   },
   {
-    id: 6,
+    id: 7,
     img: ShopifyLogo,
     alt: "Shopify",
+    width: 100,
+  },
+  {
+    id: 8,
+    img: GoogleAnalytics,
+    alt: "GoogleAnalytics",
+    width: 100,
+  },
+  {
+    id: 9,
+    img: GTM,
+    alt: "GoogleAnalytics",
     width: 100,
   },
 ];
