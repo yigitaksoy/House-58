@@ -30,23 +30,32 @@ const TechStack = () => {
       </motion.p>
       <motion.div
         className="flex flex-wrap items-center mt-5 mb-20 justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.5 }}
+        // initial={{ opacity: 0, y: 20 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        //transition={{ duration: 0.3, delay: 0.5 }}
       >
-        {techLogos.map((logos) => {
+        {techLogos.map((logos, i) => {
           return (
-            <div
+            <motion.div
               key={logos.id}
               className="w-1/2 md:w-1/3 lg:w-1/6 px-2 py-2 text-center "
+              initial={{ opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+              }}
+              transition={{
+                ease: "easeInOut",
+                duration: 1,
+                delay: i * 0.1,
+              }}
             >
-              <img
+              <motion.img
                 alt={logos.alt}
                 className="opacity-40 hover:opacity-100 mx-auto transition duration-300"
                 src={logos.img}
                 width={logos.width}
               />
-            </div>
+            </motion.div>
           );
         })}
       </motion.div>
