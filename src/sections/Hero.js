@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 import AnimatedText from "../components/AnimatedText/AnimatedText";
 import Windmill from "../assets/svgs/windmill.svg";
+import InteractiveMarquee from "../components/InteractiveMarquee/InteractiveMarquee";
 
-const Hero = ({ marqueeText, locationText }) => {
+const Hero = ({ locationText }) => {
   const intersectTarget = useRef(null);
 
   const placeholderText = [{ type: "heading2", text: "HOUSE OF" }];
@@ -20,7 +21,7 @@ const Hero = ({ marqueeText, locationText }) => {
   return (
     <motion.div
       id="home"
-      className="container lg:h-[90vh] h-[80vh] xs:pt-20 w-screen "
+      className="container lg:h-[90vh] h-[80vh] xs:pt-20 w-screen"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -35,22 +36,12 @@ const Hero = ({ marqueeText, locationText }) => {
         </motion.div>
       </motion.div>
       <motion.div
-        className="w-screen marquee-bg"
+        className="w-screen overflow-hidden"
         transition={{ duration: 1, delay: 1 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <Marquee
-          speed="100"
-          gradient={false}
-          direction="left"
-          pauseOnHover={false}
-          delay="2"
-        >
-          <h1 className="font-black lg:text-[8rem] md:text-[6rem] text-7xl overflow-hidden lg:pt-1 lg:py-5 pt-5 py-5 text-center">
-            {marqueeText}
-          </h1>
-        </Marquee>
+        <InteractiveMarquee />
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
