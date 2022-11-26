@@ -28,12 +28,7 @@ const TechStack = () => {
         We&apos;ll carefully pair the right frameworks and platforms with your
         business objectives.
       </motion.p>
-      <motion.div
-        className="flex flex-wrap items-center mt-5 mb-20 justify-center"
-        // initial={{ opacity: 0, y: 20 }}
-        // whileInView={{ opacity: 1, y: 0 }}
-        //transition={{ duration: 0.3, delay: 0.5 }}
-      >
+      <motion.div className="flex flex-wrap items-center mt-5 mb-20 justify-center">
         {techLogos.map((logos, i) => {
           return (
             <motion.div
