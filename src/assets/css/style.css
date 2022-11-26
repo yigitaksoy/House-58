@@ -49,6 +49,43 @@
   -webkit-text-fill-color: transparent;
 }
 
+.marquee {
+  display: flex;
+  align-items: center;
+  cursor: -webkit-grab;
+}
+
+.marqueeText {
+  font-size: 8rem;
+  letter-spacing: -0.05em;
+  padding-right: 0.25em;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+  background: linear-gradient(
+    to right,
+    rgb(217, 70, 239),
+    hsl(217, 91%, 60%),
+    rgb(228, 77, 77),
+    rgb(0, 187, 255),
+    rgb(251, 146, 60)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.drag {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+@media only screen and (max-width: 768px) {
+  .item {
+    font-size: 4rem !important;
+  }
+}
+
 /* Animated SVG */
 
 #windmill {
@@ -151,15 +188,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-/*   Contact */
-
-.contact-marquee {
-  background: linear-gradient(145deg, #00bbff, #3b82f6);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Contact Form */
