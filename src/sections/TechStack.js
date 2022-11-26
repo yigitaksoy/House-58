@@ -46,7 +46,7 @@ const TechStack = () => {
             >
               <motion.img
                 alt={logos.alt}
-                className="opacity-40 hover:opacity-100 mx-auto transition duration-300"
+                className="mx-auto transition duration-300 logo"
                 src={logos.img}
                 width={logos.width}
               />
