@@ -40,7 +40,7 @@ const TechStack = () => {
               }}
               transition={{
                 ease: "easeInOut",
-                duration: 1,
+                duration: 0.5,
                 delay: i * 0.1,
               }}
             >
