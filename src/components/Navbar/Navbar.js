@@ -62,7 +62,7 @@ const Navbar = () => {
         className="md:pr-10 pr-10"
       >
         <Link to="/contact" className={lightText}>
-          Contact
+          Let&lsquo;s Talk!
         </Link>
       </motion.div>
     </motion.nav>
