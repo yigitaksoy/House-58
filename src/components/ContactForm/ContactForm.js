@@ -135,7 +135,7 @@ const ContactForm = () => {
                   type="submit"
                   className="uppercase text-lg font-bold tracking-wide lg:w-2/5 p-3 rounded-xl transition duration-300 text-cool-beige border hover:border-0 border-[#444]"
                 >
-                  Let’s Talk!
+                  Send
                 </button>
               </div>
             </div>
