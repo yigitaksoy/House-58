@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
+  const [statusMessage, setStatusMessage] = useState("");
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -10,17 +12,24 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        "service_5pv2cnh",
-        "template_hhwy766",
+        "service_aeinemw",
+        "template_dpmihsp",
         form.current,
-        "YAt-orSZb9iqvplwF"
+        "9bUoMycNatiUdnz1i"
       )
       .then(
         (result) => {
           console.log(result.text);
+
+          setStatusMessage(
+            "Thank you for your message! We'll get back to you shortly!"
+          );
         },
         (error) => {
           console.log(error.text);
+          setStatusMessage(
+            "Oops! There seems to be an issue, please try again!"
+          );
         }
       );
   };
@@ -57,6 +66,7 @@ const ContactForm = () => {
       >
         <form method="POST" action="" ref={form} onSubmit={sendEmail}>
           <div className="bg-cool-black mx-auto rounded-xl max-w-xl">
+            <p className="text-cool-bright text-lg">{statusMessage}</p>
             <div className="grid grid-cols-1 gap-6 label ">
               <label htmlFor="name" className="block border-b py-2 ">
                 <input
@@ -85,7 +95,7 @@ const ContactForm = () => {
               </label>
               <label htmlFor="phone" className="block border-b">
                 <input
-                  type="text"
+                  type="tel"
                   id="phone"
                   name="phone"
                   className="
