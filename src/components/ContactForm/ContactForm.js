@@ -87,7 +87,7 @@ const ContactForm = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <p className="text-center text-cool-bright text-lg lg:mt-20">
+            <p className="text-center text-cool-green text-lg lg:mt-40 mt-20 mb-20">
               Thank you for your message! We&apos;ll get back to you shortly!
             </p>
           </motion.div>
