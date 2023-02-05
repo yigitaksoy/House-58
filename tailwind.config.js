@@ -12,9 +12,14 @@ module.exports = {
     fontFamily: {
       sans: ["alfarn-2, sans-serif"],
       ethno: ["ethnocentric, sans-serif"],
+      paralucent: ["paralucent, sans-serif"],
+      paralucentheavy: ["paralucent-condensed, sans-serif"],
     },
     fontWeight: {
+      thin: 300,
+      normal: 400,
       black: 700,
+      heavy: 900,
     },
 
     colors: {
@@ -30,6 +35,7 @@ module.exports = {
       "cool-blue2": "#0099fe",
       "cool-blue3": "#02a0ff",
       "cool-beige": "#e9e9e9",
+      "cool-green": "#52b69a",
     },
   },
   variants: {},
