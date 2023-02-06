@@ -1,7 +1,7 @@
 /*  Adobe Fonts */
 
 @import url("https://use.typekit.net/hib2uvd.css");
-
+@import url("https://use.typekit.net/adb6fyz.css");
 /*  TailwindCSS */
 
 @tailwind base;
@@ -110,21 +110,6 @@
 
 /*  Services Intro  */
 
-#services-intro .story {
-  background: linear-gradient(to right, rgb(251, 113, 133), rgb(251, 146, 60));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/*  Services  */
-
-#services {
-  background: linear-gradient(300deg, #f3f, #1978d1, #3b82f6);
-  background-size: 240% 240%;
-  /* animation: gradient-animation 12s ease infinite; */
-}
-
 #services-intro h2 {
   background: linear-gradient(145deg, #00bbff, #3b82f6);
   background-clip: text;
@@ -139,11 +124,40 @@
   -webkit-text-fill-color: transparent;
 }
 
-#services h3 {
-  background: hsl(221, 39%, 11%);
+#services-intro .story {
+  background: linear-gradient(to right, rgb(251, 113, 133), rgb(251, 146, 60));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/*  Services  */
+
+#services {
+  background-size: 240% 240%;
+}
+
+#services h3 {
+  /* background: hsl(221, 39%, 11%); */
+  background: linear-gradient(300deg, #f3f, #1978d1, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#services p {
+  font-family: paralucent, sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+}
+#services li {
+  font-family: paralucent, sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#services hr {
+  color: #ffffff !important;
 }
 
 /*  Tech Stack  */
