@@ -19,7 +19,7 @@
 /*  Navigation  */
 
 /* nav {
-  mix-blend-mode: screen;
+  mix-blend-mode: difference;
 } */
 
 /*  Home  */
@@ -132,10 +132,6 @@
 }
 
 /*  Services  */
-
-#services {
-  background-size: 240% 240%;
-}
 
 #services h3 {
   /* background: hsl(221, 39%, 11%); */
