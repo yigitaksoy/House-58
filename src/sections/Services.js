@@ -35,7 +35,7 @@ const Trigger = ({ expanded, onClick, showLabel, hideLabel }) => {
   return (
     <button
       onClick={onClick}
-      className="lg:text-2xl text-xl text-center text-cool-white  services-title "
+      className="lg:text-2xl text-xl text-center text-cool-white  services-title lg:pb-0 pb-5"
     >
       {expanded ? hideLabel ?? showLabel : showLabel}
     </button>
@@ -62,7 +62,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.5 }}
-          className="font-black lg:text-4xl text-2xl text-center mt-20 text-cool-white mb-20 services-title story"
+          className="font-black lg:text-4xl text-2xl text-center mt-20 text-cool-white mb-10 services-title story"
         >
           <span className="story">*</span> Take a peek into our bag of tricks
         </motion.h2>
@@ -71,7 +71,7 @@ const Services = () => {
         {servicesList.map((services, index) => (
           <motion.div
             key={index}
-            className="flex flex-wrap pt-10 pb-10 items-center glow md:flex-row-reverse"
+            className="flex flex-wrap lg:pt-10 lg:pb-10 pb-8 items-center md:flex-row-reverse"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -127,7 +127,7 @@ const Services = () => {
                   hideLabel="*show me less"
                 />
               </div>
-              <hr className="border-1 mx-auto w-1/2 services-border mt-20" />
+              <hr className="border-1 mx-auto w-1/2 services-border lg:mt-20 mt-5" />
             </motion.div>
           </motion.div>
         ))}
