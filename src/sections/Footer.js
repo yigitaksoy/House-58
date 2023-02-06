@@ -1,33 +1,10 @@
 import { Link } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Buildings from "../assets/images/buildings.png";
-import ReactGA from "react-ga";
 
 const Footer = () => {
   const intersectTarget = useRef(null);
-
-  useEffect(() => {
-    const opts = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0,
-    };
-    const callback = (list) => {
-      list.forEach((entry) => {
-        if (entry.isIntersecting) {
-          ReactGA.event({
-            category: "Scroll",
-            action: "Scrolled to Footer",
-            value: 1,
-          });
-        }
-      });
-    };
-    const observerScroll = new IntersectionObserver(callback, opts);
-
-    observerScroll.observe(intersectTarget.current);
-  }, []);
 
   const float = {
     initial: {
