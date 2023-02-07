@@ -66,6 +66,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.5 }}
+          viewport={{ once: true }}
           className="font-black lg:text-4xl text-2xl text-center mt-20 text-cool-white mb-10 services-title story"
         >
           <span className="story">*</span> Take a peek into our bag of tricks

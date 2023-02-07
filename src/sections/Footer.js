@@ -31,6 +31,7 @@ const Footer = () => {
               duration: 0.5,
               delay: 0.5,
             }}
+            viewport={{ once: true }}
           >
             Starting a new project or want to collaborate with us?
           </motion.h2>
@@ -44,6 +45,7 @@ const Footer = () => {
               duration: 0.5,
               delay: 0.5,
             }}
+            viewport={{ once: true }}
           >
             <motion.div
               className="mt-20"
@@ -55,6 +57,7 @@ const Footer = () => {
                 duration: 2,
                 repeatType: "reverse",
               }}
+              viewport={{ once: true }}
             >
               <Link
                 to="/contact"
@@ -89,6 +92,7 @@ const Footer = () => {
               duration: 0.5,
               delay: 0.5,
             }}
+            viewport={{ once: true }}
           >
             <div className="pt-1 pr-5">
               <img src={Buildings} alt="buildings" className="w-12 h-12" />
