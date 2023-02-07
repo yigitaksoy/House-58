@@ -133,6 +133,14 @@
 
 /*  Services  */
 
+#services h2,
+#services button span {
+  background: linear-gradient(to right, rgb(251, 113, 133), rgb(251, 146, 60));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #services h3 {
   /* background: hsl(221, 39%, 11%); */
   background: linear-gradient(300deg, #f3f, #1978d1, #3b82f6);
