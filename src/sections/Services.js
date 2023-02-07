@@ -37,6 +37,7 @@ const Trigger = ({ expanded, onClick, showLabel, hideLabel }) => {
       onClick={onClick}
       className="lg:text-2xl text-xl text-center text-cool-white  services-title lg:pb-0 pb-5"
     >
+      <span>* </span>
       {expanded ? hideLabel ?? showLabel : showLabel}
     </button>
   );
@@ -69,7 +70,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="font-black lg:text-4xl text-2xl text-center mt-20 text-cool-white mb-10 services-title story"
         >
-          <span className="story">*</span> Take a peek into our bag of tricks
+          Take a peek into our bag of tricks
         </motion.h2>
       </motion.div>
       <div className="mx-auto p-5">
@@ -132,8 +133,8 @@ const Services = () => {
                 <Accordion.Trigger
                   expanded={currentExpanded[services.id]}
                   onClick={() => handleClick(services.id)}
-                  showLabel="*show me more"
-                  hideLabel="*show me less"
+                  showLabel="show me more"
+                  hideLabel="show me less"
                 />
               </div>
               <hr className="border-1 mx-auto w-1/2 services-border lg:mt-20 mt-5" />
