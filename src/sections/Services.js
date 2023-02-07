@@ -45,10 +45,14 @@ const Trigger = ({ expanded, onClick, showLabel, hideLabel }) => {
 Accordion.Trigger = Trigger;
 
 const Services = () => {
-  const intersectTarget = useRef(null);
-  const [currentExpanded, setCurrentExpanded] = useState(null);
+  const intersectTarget = useRef();
+  const [currentExpanded, setCurrentExpanded] = useState({});
   const handleClick = (id) => {
-    setCurrentExpanded((prevExpanded) => (prevExpanded === id ? null : id));
+    setCurrentExpanded((prevExpanded) => {
+      let newExpanded = { ...prevExpanded };
+      newExpanded[id] = !newExpanded[id];
+      return newExpanded;
+    });
   };
 
   return (
@@ -94,7 +98,7 @@ const Services = () => {
                 {services.title}
               </motion.h3>
               <div className="max-w-screen-xl mx-auto lg:text-sm flex flex-col items-center">
-                <Accordion expanded={currentExpanded === services.id}>
+                <Accordion expanded={currentExpanded[services.id]}>
                   <div className=" mx-auto text-center lg:pl-40 lg:pr-40">
                     <motion.p
                       className={`text-cool-white text-xl lg:text-2xl  md:text-lg mx-auto mb-5 ${
@@ -108,8 +112,12 @@ const Services = () => {
                         {services.details &&
                           services.details.map((detail, index) => (
                             <motion.li
-                              className={` text-cool-white text-xl list-inside marker:text-cool-blue lg:text-2xl md:text-lg mb-5 w-full lg:w-1/2 lg:px-5 ${
-                                index % 2 === 0 ? "lg:pr-5" : "lg:pl-5"
+                              className={`text-cool-white text-xl list-inside marker:text-cool-blue lg:text-2xl md:text-lg mb-5 w-full ${
+                                services.details.length === 1
+                                  ? "lg:w-full text-center"
+                                  : `lg:w-1/2 lg:px-5 ${
+                                      index % 2 === 0 ? "lg:pr-5" : "lg:pl-5"
+                                    }`
                               }`}
                               key={index}
                             >
@@ -121,8 +129,8 @@ const Services = () => {
                   </div>
                 </Accordion>
                 <Accordion.Trigger
+                  expanded={currentExpanded[services.id]}
                   onClick={() => handleClick(services.id)}
-                  expanded={currentExpanded === services.id}
                   showLabel="*show me more"
                   hideLabel="*show me less"
                 />
