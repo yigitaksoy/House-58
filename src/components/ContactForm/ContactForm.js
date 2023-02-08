@@ -93,7 +93,7 @@ const ContactForm = () => {
           </motion.div>
         ) : (
           <form method="POST" action="" ref={form} onSubmit={sendEmail}>
-            <div className="bg-cool-black mx-auto rounded-xl max-w-xl">
+            <div className="bg-cool-darker mx-auto rounded-xl max-w-xl">
               <p className="text-cool-bright text-lg">{statusMessage}</p>
               <div className="grid grid-cols-1 gap-6 label ">
                 <label htmlFor="name" className="block border-b py-2 ">
@@ -102,7 +102,7 @@ const ContactForm = () => {
                     type="text"
                     name="name"
                     className="
-                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-black uppercase text-cool-beige text-3xl
+                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-darker uppercase text-cool-beige text-3xl
                   "
                     required="required"
                     placeholder="Name"
@@ -114,7 +114,7 @@ const ContactForm = () => {
                     type="email"
                     name="email"
                     className="
-                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-black text-cool-beige   uppercase text-3xl
+                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-darker text-cool-beige   uppercase text-3xl
                   "
                     placeholder="Email"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -127,7 +127,7 @@ const ContactForm = () => {
                     id="phone"
                     name="phone"
                     className="
-                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-black text-cool-beige   uppercase text-3xl
+                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-darker text-cool-beige   uppercase text-3xl
                   "
                     placeholder="Phone"
                     required="required"
@@ -139,7 +139,7 @@ const ContactForm = () => {
                     name="company"
                     type="text"
                     className="
-                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-black text-cool-beige   uppercase text-3xl
+                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-darker text-cool-beige   uppercase text-3xl
                   "
                     placeholder="Company"
                     required="required"
@@ -151,7 +151,7 @@ const ContactForm = () => {
                     id="message"
                     name="message"
                     className="
-                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-black text-xl
+                appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none bg-cool-darker text-xl
                   "
                     rows="5"
                     required="required"
