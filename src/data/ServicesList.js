@@ -12,8 +12,9 @@ export const servicesList = [
     details: [
       { id: 1, option: "Responsive web development" },
       { id: 2, option: "Web applications" },
-      { id: 3, option: "UX consulting" },
-      { id: 3, option: "Maintenance & support" },
+      { id: 3, option: "Wordpress" },
+      { id: 4, option: "UX consulting" },
+      { id: 5, option: "Maintenance & support" },
     ],
     img: WebDesign,
   },
@@ -28,7 +29,7 @@ export const servicesList = [
         option: "WooCommerce",
       },
       {
-        id: 1,
+        id: 2,
         option: "Shopify",
       },
     ],
