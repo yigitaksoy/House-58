@@ -24,7 +24,7 @@ module.exports = {
 
     colors: {
       "cool-dark": "#1a1a1a",
-      "cool-darker": "#121212",
+      "cool-darker": "#000",
       "cool-black": "#0f0f0f",
       "cool-white": "#ffffff",
       "cool-dimmer": "#666",
