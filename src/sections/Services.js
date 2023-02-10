@@ -78,23 +78,18 @@ const Services = () => {
           <motion.div
             key={index}
             className="flex flex-wrap lg:pt-10 lg:pb-10 pb-8 items-center md:flex-row-reverse"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <motion.div
               key={services.id}
               className="mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-              }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               viewport={{ once: true }}
-              transition={{
-                ease: "easeInOut",
-                duration: 0.5,
-              }}
             >
               <motion.h3 className="font-black lg:text-8xl text-4xl text-center md:text-4xl md:text-center uppercase text-cool-white">
                 {services.title}
