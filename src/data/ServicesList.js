@@ -1,8 +1,3 @@
-import Ecommerce from "../assets/svgs/ecommerce.svg";
-import Maintanence from "../assets/svgs/maintanence.svg";
-import WebDesign from "../assets/svgs/web-design.svg";
-import FullStack from "../assets/svgs/full-stack.svg";
-
 export const servicesList = [
   {
     id: 1,
@@ -16,7 +11,6 @@ export const servicesList = [
       { id: 4, option: "UX consulting" },
       { id: 5, option: "Maintenance & support" },
     ],
-    img: WebDesign,
   },
   {
     id: 2,
@@ -33,14 +27,12 @@ export const servicesList = [
         option: "Shopify",
       },
     ],
-    img: Ecommerce,
   },
   {
     id: 3,
     title: "Full Stack Development",
     description:
       "The online presence helps any business to open ample opportunities for its growth. Based on your individual needs, we can help you to build a modern web solution.",
-    img: FullStack,
   },
 
   {
@@ -48,6 +40,5 @@ export const servicesList = [
     title: "Website Maintanence",
     description:
       "We make sure that your website runs reliably, securely, and blazing fast so that you can focus on what matters, which is growing your business. House 58 can also keep your website up to date with fresh content and features.",
-    img: Maintanence,
   },
 ];
