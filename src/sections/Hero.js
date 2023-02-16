@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-// import Marquee from "react-fast-marquee";
 import AnimatedText from "../components/AnimatedText/AnimatedText";
 import Windmill from "../assets/svgs/windmill.svg";
 import InteractiveMarquee from "../components/InteractiveMarquee/InteractiveMarquee";
