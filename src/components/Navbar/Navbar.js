@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import Logo from "../../assets/images/House-58-Only.png";
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
     "text-cool-white hover:text-cool-blue transition duration-300";
 
   /** this hook gets the scroll y-axis **/
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   /** this hook manages state **/
   const [hidden, setHidden] = useState(false);
 
