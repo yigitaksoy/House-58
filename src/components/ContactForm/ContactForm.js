@@ -160,7 +160,7 @@ const ContactForm = () => {
                 <div className=" text-center">
                   <motion.button
                     type="submit"
-                    className="uppercase text-lg font-bold tracking-wide lg:w-2/5 p-3 rounded-xl  text-cool-beige hover:text-cool-black hover:bg-cool-white border hover:border-0 border-[#444]"
+                    className="uppercase text-lg font-bold tracking-wide md:w-2/5 w-3/5 p-3 rounded-xl  text-cool-beige hover:text-cool-black hover:bg-cool-white border hover:border-0 border-[#444]"
                     whileHover={{
                       scale: 1.1,
                     }}
