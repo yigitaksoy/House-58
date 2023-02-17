@@ -75,7 +75,6 @@ const ContactForm = () => {
           Get In Touch
         </motion.h3>
       </div>
-
       <motion.div
         transition={{ duration: 0.5, delay: 1 }}
         initial={{ opacity: 0 }}
@@ -159,12 +158,19 @@ const ContactForm = () => {
                   ></textarea>
                 </label>
                 <div className=" text-center">
-                  <button
+                  <motion.button
                     type="submit"
-                    className="uppercase text-lg font-bold tracking-wide lg:w-2/5 p-3 rounded-xl transition duration-300 text-cool-beige border hover:border-0 border-[#444]"
+                    className="uppercase text-lg font-bold tracking-wide lg:w-2/5 p-3 rounded-xl  text-cool-beige hover:text-cool-black hover:bg-cool-white border hover:border-0 border-[#444]"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
                     Send
-                  </button>
+                  </motion.button>
                 </div>
               </div>
             </div>
