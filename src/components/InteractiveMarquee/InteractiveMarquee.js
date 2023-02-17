@@ -11,6 +11,7 @@ const _ = {
   threshold: 0.014,
   wheelFactor: 1.8,
   dragFactor: 1.2,
+  initialSpeed: 0.5, // new initial speed value
 };
 
 const MarqueeItem = ({ content, speed }) => {
