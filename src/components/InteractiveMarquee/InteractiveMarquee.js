@@ -11,15 +11,19 @@ const _ = {
   threshold: 0.014,
   wheelFactor: 1.8,
   dragFactor: 1.2,
-  initialSpeed: 0.5, // new initial speed value
 };
 
 const MarqueeItem = ({ content, speed }) => {
   const item = useRef(null);
   const rect = useRef({});
-  const x = useRef(0);
+  const x = useRef(-rect.current.width);
 
   const [width, height] = useWindowSize();
+
+  useEffect(() => {
+    rect.current = item.current.getBoundingClientRect();
+    x.current = -rect.current.width;
+  }, [width, height]);
 
   const setX = () => {
     if (!item.current || !rect.current) return;
@@ -28,10 +32,6 @@ const MarqueeItem = ({ content, speed }) => {
     if (xPercentage > 0) x.current = -rect.current.width;
     item.current.style.transform = `translate3d(${xPercentage}%, 0, 0)`;
   };
-
-  useEffect(() => {
-    rect.current = item.current.getBoundingClientRect();
-  }, [width, height]);
 
   const loop = () => {
     x.current -= speed.get();
