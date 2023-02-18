@@ -4,14 +4,7 @@ import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
   const form = useRef(null);
-
-  const reset = () => {
-    form.current.reset();
-    setFormSubmitted(false);
-    setStatusMessage("");
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,17 +19,10 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          reset();
           setFormSubmitted(true);
-          setStatusMessage(
-            "Thank you for your message! We'll get back to you shortly!"
-          );
         },
         (error) => {
           console.log(error.text);
-          setStatusMessage(
-            "Oops! There seems to be an issue, please try again!"
-          );
         }
       );
   };
@@ -93,7 +79,6 @@ const ContactForm = () => {
         ) : (
           <form method="POST" action="" ref={form} onSubmit={sendEmail}>
             <div className="bg-cool-darker mx-auto rounded-xl max-w-xl">
-              <p className="text-cool-bright text-lg">{statusMessage}</p>
               <div className="grid grid-cols-1 gap-6 label ">
                 <label htmlFor="name" className="block border-b py-2 ">
                   <input
