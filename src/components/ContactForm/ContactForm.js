@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(null);
   const form = useRef(null);
 
   const sendEmail = (e) => {
@@ -22,6 +23,7 @@ const ContactForm = () => {
           setFormSubmitted(true);
         },
         (error) => {
+          setFormError(true);
           console.log(error.text);
         }
       );
@@ -61,6 +63,17 @@ const ContactForm = () => {
           Get In Touch
         </motion.h3>
       </div>
+      {formError && (
+        <motion.div
+          transition={{ duration: 0.5, delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <p className="text-center text-lg mt-5 text-[#e63946]">
+            Something went wrong! Please try again later.
+          </p>
+        </motion.div>
+      )}
       <motion.div
         transition={{ duration: 0.5, delay: 1 }}
         initial={{ opacity: 0 }}
