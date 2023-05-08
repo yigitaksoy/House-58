@@ -2,6 +2,12 @@
 House 58 Digital
 </h2>
 
-<h3 align="center">
-<img src="https://github.com/yigitaksoy/House-58/blob/master/src/assets/images/house58.png" alt="House 58 Preview">
-</h3>
+![House 58 Digital](public/house58.gif)
+
+### Built With
+
+- React v17
+- React Router
+- Framer Motion
+- Tailwind CSS
+- EmailJS
